@@ -107,6 +107,9 @@ public class Animal {
 	public void vieillir() {
 		//TODO fait vieillir l'animal d'une unité de temps
 		//une bonne manière de faire, une moins bonne...
+		
+		//this.setAge(this.age+=1);
+		this.age += 1;
 	}
 	
 	public void rencontrer(Animal a) {
@@ -162,8 +165,10 @@ public class Animal {
 		//TODO ajoutez vos propres tests de getters et setters
 		System.out.println(d.getAge());
 		d.setAge(8);
-		System.out.print(d.getAge());
-		
+		System.out.println(d.getAge());
+		d.vieillir();
+		System.out.println(d.getAge());
+
 		//TODO test vieillir
 		
 		//TODO test seDeplacer
