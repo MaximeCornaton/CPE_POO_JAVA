@@ -58,11 +58,12 @@ public class Animal {
 	 *  Accesseurs et mutateurs
 	 */
 	//TODO
+
 	public int getId() {
 		return id;
 	}
 	
-	public String getSexe() {
+	public Sexe getSexe() {
 		return sexe;
 	}
 	
@@ -70,13 +71,21 @@ public class Animal {
 		return etat;
 	}
 	
+	public Point getCoord() {
+		return this.coord;
+	}
+	
+	public int getAge() {
+		return this.age;
+	}
+	
 	public void setEtat(Etat etat) {
 		this.etat = etat;
 	}
 	
-	public void setAge(Int age) {
-		oldAge = this.age;
-		this.age = (age > oldAge) ? age : oldAge;
+	public void setAge(int age) {
+		int oldAge = this.age;
+		this.age = (age > oldAge) ? age : oldAge; //On change l'age si le nouveau est superieur
 	}
 	
 	/*
@@ -120,7 +129,7 @@ public class Animal {
 		//complétez la méthode pour tester les nouvelles fonctionnalités que vous allez implémenter
 		Animal a = new Animal();
 		Animal b = new Animal(Sexe.Male);
-		Animal c = new Animal(Sexe.Assexue);
+		//Animal c = new Animal(Sexe.Assexue);
 		Animal d = new Animal(Sexe.Femelle,new Point(25,30));
 		Animal e = new Animal(Sexe.Femelle,new Point(25,30));
 		
@@ -132,7 +141,7 @@ public class Animal {
 		System.out.println(a);
 		System.out.println(a.toString());
 		System.out.println(b);
-		System.out.println(c);
+		//System.out.println(c);
 		System.out.println(d);
 		
 		System.out.println("*** Getters et setters **********");
@@ -151,6 +160,9 @@ public class Animal {
 		
 		
 		//TODO ajoutez vos propres tests de getters et setters
+		System.out.println(d.getAge());
+		d.setAge(8);
+		System.out.print(d.getAge());
 		
 		//TODO test vieillir
 		
