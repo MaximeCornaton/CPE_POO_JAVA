@@ -1,6 +1,7 @@
 package tp.model.agents;
 
 import java.awt.Point;
+import java.lang.Math;
 
 /**
  * Cette classe modélise un Animal dans la simulation
@@ -102,6 +103,14 @@ public class Animal {
 
 	public void seDeplacer() {
 		//TODO utiliser Math.random() pour choisir une direction de déplacement
+		//On se deplace de -1 ou 1 
+		
+		//random : double [0,1[
+		double dx = Math.random() < 0.5 ? -1 : 1; //deplacement de -1 ou 1
+		double dy = Math.random() < 0.5 ? -1 : 1;
+		
+		this.coord.x += dx;
+		this.coord.y += dy;
 	}
 	
 	public void vieillir() {
@@ -123,7 +132,7 @@ public class Animal {
 	 */
 	private static int getUniqueId() {
 		//TODO 
-		return 0;
+		return currentId+=1;
 	}
 	
 	public static void main(String args[]) {
@@ -165,19 +174,22 @@ public class Animal {
 		//TODO ajoutez vos propres tests de getters et setters
 		System.out.println(d.getAge());
 		d.setAge(8);
+
+		//TODO test vieillir
 		System.out.println(d.getAge());
 		d.vieillir();
 		System.out.println(d.getAge());
-
-		//TODO test vieillir
 		
 		//TODO test seDeplacer
+		System.out.println(d.getCoord());
+		d.seDeplacer();
+		System.out.println(d.getCoord());
 		
 		//TODO test id
-		/*
+		
 		System.out.println(a.getId());
 		System.out.println(b.getId());
-		*/
+		
 		
 		/*
 		 * Test comparaison
