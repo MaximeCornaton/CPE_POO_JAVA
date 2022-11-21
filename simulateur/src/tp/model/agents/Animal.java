@@ -14,6 +14,8 @@ public class Animal extends Agent {
 	protected Etat etat;
 	protected Sexe sexe;
 	
+	protected Agent hebergement;
+	
 	/* 
 	 * constructeurs 
 	 */
