@@ -37,7 +37,6 @@ public class Animal {
 	}
 	
 	public Animal(Sexe sexe) {
-		//TODO
 		/* crée un animal avec le sexe passé en paramètre, à la position (0;0), d'âge 0 et lui attribue un id unique
 		 * une bonne manière de faire 
 		 * en utilisant ce qui existe déjà, une moins bonne
@@ -47,7 +46,6 @@ public class Animal {
 	}
 	
 	public Animal() {
-		//TODO
 		/* crée un animal de sexe femelle, à la position (0;0), d'âge 0 et lui attribue un id unique
 		 * une bonne manière de faire 
 		 * en utilisant ce qui existe déjà, une moins bonne
@@ -58,7 +56,6 @@ public class Animal {
 	/*
 	 *  Accesseurs et mutateurs
 	 */
-	//TODO
 
 	public int getId() {
 		return id;
@@ -92,7 +89,7 @@ public class Animal {
 	/*
 	 * Redéfinitions de méthodes d'object
 	 */
-	//TODO
+	
 	
 
 	/* 
@@ -131,7 +128,6 @@ public class Animal {
 	 * @return un identifiant entier unique d'animal
 	 */
 	private static int getUniqueId() {
-		//TODO 
 		return currentId+=1;
 	}
 	
