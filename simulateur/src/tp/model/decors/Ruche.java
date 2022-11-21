@@ -1,15 +1,16 @@
 /**
  * 
  */
-package tp.model.agents;
+package tp.model.decors;
 
+import tp.model.agents.Animal;
 import tp.model.comportements.Hebergeur;
 
 /**
  * @author maxime.cornaton
  *
  */
-public class Arbre extends Vegetal implements Hebergeur{
+public class Ruche extends Decor implements Hebergeur{
 
 	@Override
 	public boolean peutAccueillir(Animal animal) {
