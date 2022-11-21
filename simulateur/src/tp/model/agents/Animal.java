@@ -3,6 +3,8 @@ package tp.model.agents;
 import java.awt.Point;
 import java.lang.Math;
 
+import tp.model.comportements.Hebergeur;
+
 /**
  * Cette classe modélise un Animal dans la simulation
  * @author bruno
@@ -14,7 +16,7 @@ public class Animal extends Agent {
 	protected Etat etat;
 	protected Sexe sexe;
 	
-	protected Agent hebergement;
+	protected Hebergeur hebergement;
 	
 	/* 
 	 * constructeurs 

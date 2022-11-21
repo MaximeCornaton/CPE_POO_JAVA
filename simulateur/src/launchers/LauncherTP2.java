@@ -12,9 +12,12 @@ public class LauncherTP2 {
 	public static void main(String [] args) {
 		Agent a = new Animal(Sexe.Femelle,new Point(25,30));
 		
-		//TODO
 		//tester la hiérarchie d'agent
 		System.out.println(a);
+		
+		
+		//Tester les hebergeurs
+		
 		
 	}
 

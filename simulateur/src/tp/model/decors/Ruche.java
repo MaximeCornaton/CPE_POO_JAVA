@@ -11,7 +11,9 @@ import tp.model.comportements.Hebergeur;
  *
  */
 public class Ruche extends Decor implements Hebergeur{
-
+	
+	protected int miel;
+	
 	@Override
 	public boolean peutAccueillir(Animal animal) {
 		// TODO Auto-generated method stub
