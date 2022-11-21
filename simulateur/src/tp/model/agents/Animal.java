@@ -174,10 +174,13 @@ public class Animal extends Agent {
 		 * Test comparaison
 		 */
 		
-		System.out.println(d);
+		System.out.println("test");
 		System.out.println(e);
 		
-		System.out.println(d==d);
+		Animal ab = new Animal();
+		Animal ac = new Animal();
+		
+		System.out.println(ab==ac);
 		System.out.println(d.equals(d));
 		
 		System.out.println(d==e);

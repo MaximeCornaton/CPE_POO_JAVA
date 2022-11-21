@@ -16,8 +16,8 @@ public class Ruche extends Decor implements Hebergeur{
 	
 	@Override
 	public boolean peutAccueillir(Animal animal) {
-		// TODO Auto-generated method stub
-		return false;
+		// Decrit la capacité de la ruche a heberger cet animal
+		return animal.getClass().getSimpleName().equals("Abeille");
 	}
 
 	@Override
