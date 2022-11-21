@@ -8,20 +8,11 @@ import java.lang.Math;
  * @author bruno
  *
  */
-public class Animal {
-	/* attributs de classe */
-	private static int currentId = 0;
+public class Animal extends Agent {
 	
-	/* attributs d'instance*/
-	/** identifiant unique de l'animal*/
-	private int id;
-	/** age en unité de temps*/
-	private int age;
-	/** position sur la carte*/
-	private Point coord;
 	/** état de santé de l'animal */
-	private Etat etat; 
-	private Sexe sexe;
+	protected Etat etat;
+	protected Sexe sexe;
 	
 	/* 
 	 * constructeurs 
@@ -56,49 +47,22 @@ public class Animal {
 	/*
 	 *  Accesseurs et mutateurs
 	 */
-
-	public int getId() {
-		return id;
-	}
 	
 	public Sexe getSexe() {
 		return sexe;
 	}
-	
+
 	public Etat getEtat() {
 		return etat;
 	}
-	
-	public Point getCoord() {
-		return this.coord;
-	}
-	
-	public int getAge() {
-		return this.age;
-	}
-	
+
 	public void setEtat(Etat etat) {
 		this.etat = etat;
-	}
-	
-	public void setAge(int age) {
-		int oldAge = this.age;
-		this.age = (age > oldAge) ? age : oldAge; //On change l'age si le nouveau est superieur
 	}
 	
 	/*
 	 * Redéfinitions de méthodes d'object
 	 */
-	
-	@Override
-	public String toString() {
-		return this.getClass().getSimpleName()
-				+" "+ this.getId()
-				+" ("+this.sexe
-				+", ("+(int) this.coord.getX()
-				+"; "+(int) this.coord.getY()
-				+"))"; 
-	}
 	
 	public boolean equals(Animal animal) {
 		//Auto-generated method stub
@@ -108,15 +72,19 @@ public class Animal {
 	}
 	
 	
-
+	@Override
+	public String toString() {
+		return super.toString()+" "+this.sexe;
+	}
+	
 	/* 
 	 * comportements d'instance
 	 */
-	
 
 
 	private int random1() {
-		//return -1 ou 1
+		//return -1, 0 ou 1
+		//random : double [0,1[
 		double i_rand = Math.random();
 		if( i_rand < 1/3){
 			return -1 ;
@@ -129,9 +97,8 @@ public class Animal {
 
 	public void seDeplacer() {
 		//utiliser Math.random() pour choisir une direction de déplacement
-		//On se deplace de -1 ou 1 
+		//On se deplace de -1,0  ou 1 
 		
-		//random : double [0,1[
 		double dx = random1();
 		double dy = random1();
 		
@@ -139,25 +106,8 @@ public class Animal {
 		this.coord.y += dy;
 	}
 
-	public void vieillir() {
-		//TODO fait vieillir l'animal d'une unité de temps
-		//une bonne manière de faire, une moins bonne...
-		
-		//this.setAge(this.age+=1);
-		this.age += 1;
-	}
-	
 	public void rencontrer(Animal a) {
 		//TODO
-	}
-	
-	/* comportements de classe */ 
-	/**
-	 * Renvoie un identifiant unique non encore utilisé
-	 * @return un identifiant entier unique d'animal
-	 */
-	private static int getUniqueId() {
-		return currentId+=1;
 	}
 	
 	public static void main(String args[]) {
