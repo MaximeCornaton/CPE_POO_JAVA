@@ -90,6 +90,23 @@ public class Animal {
 	 * Redéfinitions de méthodes d'object
 	 */
 	
+	@Override
+	public String toString() {
+		return this.getClass().getSimpleName()
+				+" "+ this.getId()
+				+" ("+this.sexe
+				+", ("+(int) this.coord.getX()
+				+"; "+(int) this.coord.getY()
+				+"))"; 
+	}
+	
+	public boolean equals(Animal animal) {
+		//Auto-generated method stub
+		return this.age == animal.getAge() && 
+				this.sexe == animal.getSexe() &&
+				this.etat == animal.getEtat();
+	}
+	
 	
 
 	/* 
@@ -98,18 +115,30 @@ public class Animal {
 	
 
 
+	private int random1() {
+		//return -1 ou 1
+		double i_rand = Math.random();
+		if( i_rand < 1/3){
+			return -1 ;
+		}else if(i_rand < 2/3){
+			return 1;
+		}else {
+			return 0;
+		} 
+	}
+
 	public void seDeplacer() {
-		//TODO utiliser Math.random() pour choisir une direction de déplacement
+		//utiliser Math.random() pour choisir une direction de déplacement
 		//On se deplace de -1 ou 1 
 		
 		//random : double [0,1[
-		double dx = Math.random() < 0.5 ? -1 : 1; //deplacement de -1 ou 1
-		double dy = Math.random() < 0.5 ? -1 : 1;
+		double dx = random1();
+		double dy = random1();
 		
 		this.coord.x += dx;
 		this.coord.y += dy;
 	}
-	
+
 	public void vieillir() {
 		//TODO fait vieillir l'animal d'une unité de temps
 		//une bonne manière de faire, une moins bonne...
@@ -133,7 +162,7 @@ public class Animal {
 	
 	public static void main(String args[]) {
 		//tests unitaires de la classe Animal
-		//TODO décommentez les lignes pour approfondir le test unitaire
+		//décommentez les lignes pour approfondir le test unitaire
 		//complétez la méthode pour tester les nouvelles fonctionnalités que vous allez implémenter
 		Animal a = new Animal();
 		Animal b = new Animal(Sexe.Male);
@@ -167,35 +196,41 @@ public class Animal {
 		System.out.println(d.getCoord());
 		
 		
-		//TODO ajoutez vos propres tests de getters et setters
+		//ajoutez vos propres tests de getters et setters
 		System.out.println(d.getAge());
 		d.setAge(8);
 
-		//TODO test vieillir
+		//test vieillir
 		System.out.println(d.getAge());
 		d.vieillir();
 		System.out.println(d.getAge());
 		
-		//TODO test seDeplacer
+		//test seDeplacer
 		System.out.println(d.getCoord());
 		d.seDeplacer();
 		System.out.println(d.getCoord());
 		
-		//TODO test id
+		//test id
 		
 		System.out.println(a.getId());
 		System.out.println(b.getId());
-		
+
 		
 		/*
 		 * Test comparaison
 		 */
-		/*
+		
+		System.out.println(d);
+		System.out.println(e);
+		
+		System.out.println(d==d);
+		System.out.println(d.equals(d));
+		
 		System.out.println(d==e);
 		System.out.println(d.equals(e));
 		System.out.println("Bonjour"=="Bonjour");
 		System.out.println("Bonjour".equals("Bonjour"));
-		*/
+		
 	}
 
 }
