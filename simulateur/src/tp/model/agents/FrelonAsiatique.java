@@ -8,5 +8,6 @@ package tp.model.agents;
  *
  */
 public class FrelonAsiatique extends Frelons {
-
+	
+	
 }
