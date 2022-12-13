@@ -1,7 +1,8 @@
 /**
  * 
  */
-package tp.model.agents;
+package model.agents.animaux;
+
 
 /**
  * @author maxime.cornaton

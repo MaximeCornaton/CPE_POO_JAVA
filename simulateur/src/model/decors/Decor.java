@@ -1,18 +1,23 @@
-package tp.model.agents;
+/**
+ * 
+ */
+package model.decors;
 
 import java.awt.Point;
 
-public class Agent {
+/**
+ * @author maxime.cornaton
+ *
+ */
+public class Decor {
 
 	private static int currentId = 0;
 	/** identifiant unique de l'animal*/
 	protected int id;
-	/** age en unité de temps*/
-	protected int age;
+
 	/** position sur la carte*/
 	protected Point coord;
-
-
+	
 	/**
 	 * Renvoie un identifiant unique non encore utilisé
 	 * @return un identifiant entier unique d'animal
@@ -32,16 +37,6 @@ public class Agent {
 	public Point getCoord() {
 		return this.coord;
 	}
-
-	public int getAge() {
-		return this.age;
-	}
-
-	public void setAge(int age) {
-		int oldAge = this.age;
-		//On change l'age si le nouveau est superieur
-		this.age = (age > oldAge) ? age : oldAge; 
-	}
 	
 	
 	/*
@@ -57,21 +52,15 @@ public class Agent {
 				+"))"; 
 	}
 	
-
 	/* 
 	 * comportements d'instance
 	 */
 	
-	public void vieillir() {
-		//TODO fait vieillir l'animal d'une unité de temps
-		//une bonne manière de faire, une moins bonne...
-		
-		//this.setAge(this.age+=1);
-		this.age += 1;
-	}
-
-	public Agent() {
+	
+	
+	public Decor() {
 		super();
 	}
-
+	
+	
 }

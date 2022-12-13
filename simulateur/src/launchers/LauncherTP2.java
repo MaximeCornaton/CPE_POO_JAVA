@@ -2,12 +2,13 @@ package launchers;
 
 import java.awt.Point;
 
-import tp.model.agents.Abeille;
-import tp.model.agents.Agent;
-import tp.model.agents.Animal;
-import tp.model.agents.Arbre;
-import tp.model.agents.Frelons;
-import tp.model.agents.Sexe;
+import model.agents.Agent;
+import model.agents.Animal;
+import model.agents.Sexe;
+import model.agents.animaux.Abeille;
+import model.agents.animaux.Frelons;
+import model.agents.vegetaux.Arbre;
+
 
 
 public class LauncherTP2 {
@@ -19,9 +20,7 @@ public class LauncherTP2 {
 		System.out.println(a);
 		
 		
-		
 		//Tester les hebergeurs
-		
 		Abeille abeille1 = new Abeille();
 		Frelons frelon1 = new Frelons();
 		

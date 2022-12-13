@@ -1,7 +1,7 @@
 /**
  * 
  */
-package tp.model.decors;
+package model.decors;
 
 /**
  * @author maxime.cornaton

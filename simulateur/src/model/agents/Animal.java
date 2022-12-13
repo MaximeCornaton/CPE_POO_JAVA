@@ -1,9 +1,12 @@
-package tp.model.agents;
+package model.agents;
 
 import java.awt.Point;
 import java.lang.Math;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
 
-import tp.model.comportements.Hebergeur;
+import model.comportements.Hebergeur;
 
 /**
  * Cette classe modélise un Animal dans la simulation
@@ -16,7 +19,7 @@ public class Animal extends Agent {
 	protected Etat etat;
 	protected Sexe sexe;
 	
-	protected Hebergeur hebergement;
+	private Hebergeur hebergement = null;
 	
 	/* 
 	 * constructeurs 
@@ -61,7 +64,17 @@ public class Animal extends Agent {
 	}
 
 	public void setEtat(Etat etat) {
-		this.etat = etat;
+		if(etat != Etat.Mourant) {
+			this.etat = etat;
+		}
+	}
+	
+	public Hebergeur getHebergement() {
+		return hebergement;
+	}
+
+	public void setHebergement(Hebergeur hebergement) {
+		this.hebergement = hebergement;
 	}
 	
 	/*
@@ -90,28 +103,26 @@ public class Animal extends Agent {
 		//return -1, 0 ou 1
 		//random : double [0,1[
 		double i_rand = Math.random();
-		if( i_rand < 1/3){
-			return -1 ;
-		}else if(i_rand < 2/3){
-			return 1;
-		}else {
-			return 0;
-		} 
+		return (int) (-1+i_rand*3);
 	}
 
 	public void seDeplacer() {
 		//utiliser Math.random() pour choisir une direction de déplacement
 		//On se deplace de -1,0  ou 1 
-		
-		double dx = random1();
-		double dy = random1();
-		
-		this.coord.x += dx;
-		this.coord.y += dy;
+
+		this.coord.x += random1();
+		this.coord.y += random1();
 	}
 
 	public void rencontrer(Animal a) {
 		//TODO
+	}
+	
+	public void seNourrir() {
+		LinkedList<Etat> liste = new LinkedList<Etat>(Arrays.asList(Etat.values()));
+		Iterator<Etat> it = liste.listIterator(liste.indexOf(etat));
+		
+		if(it.hasNext()) {etat = it.next();}
 	}
 	
 	public static void main(String args[]) {
@@ -160,6 +171,7 @@ public class Animal extends Agent {
 		System.out.println(d.getAge());
 		
 		//test seDeplacer
+		System.out.println("Deplacement");
 		System.out.println(d.getCoord());
 		d.seDeplacer();
 		System.out.println(d.getCoord());
@@ -189,5 +201,7 @@ public class Animal extends Agent {
 		System.out.println("Bonjour".equals("Bonjour"));
 		
 	}
+
+
 
 }

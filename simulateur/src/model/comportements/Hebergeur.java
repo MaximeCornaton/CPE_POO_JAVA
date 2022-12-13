@@ -1,6 +1,6 @@
-package tp.model.comportements;
+package model.comportements;
 
-import tp.model.agents.Animal;
+import model.agents.Animal;
 
 /**
  * un hébergeur peut accueillir un animal
